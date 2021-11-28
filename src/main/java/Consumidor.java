@@ -8,10 +8,13 @@ public class Consumidor {
     public static void main(String[] args) throws Exception {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         connectionFactory.setHost("localhost");
+        connectionFactory.setUsername("mqadmin");
+        connectionFactory.setPassword("Admin123XX_");
+
         Connection conexao = connectionFactory.newConnection();
         Channel canal = conexao.createChannel();
 
-        String NOME_FILA = "plica"
+        String NOME_FILA = "teste"
                 + "";
         canal.queueDeclare(NOME_FILA, false, false, false, null);
 
